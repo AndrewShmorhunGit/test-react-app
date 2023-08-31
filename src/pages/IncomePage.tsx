@@ -1,3 +1,3 @@
-export function IncomePage({ props }: { props: any }) {
+export function IncomePage() {
   return <h2>Income Page</h2>;
 }

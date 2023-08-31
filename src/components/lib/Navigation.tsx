@@ -9,9 +9,12 @@ import {
   Spinner,
 } from "./Emotion";
 import spinner from "../../content/logos/spinner.svg";
-export const NavigationLink = styled.p({
+export const NavigationLink = styled.button({
+  padding: "0 0.4rem",
+  border: "none",
+  background: "transparent",
   color: palette.text_dark,
-  fontSize: "2rem",
+  fontSize: "1.6rem",
   fontWeight: "600",
   textAlign: "center",
   cursor: "pointer",
@@ -63,3 +66,17 @@ export const ImgOnLoad = ({ src }: { src: string }) => {
     </div>
   );
 };
+
+export function Clock() {
+  let time = new Date().toLocaleTimeString();
+  const [isTime, setTime] = React.useState(time);
+
+  const updateTime = () => {
+    let time = new Date().toLocaleTimeString();
+    setTime(time);
+  };
+
+  setInterval(updateTime, 1000);
+
+  return { time: isTime };
+}

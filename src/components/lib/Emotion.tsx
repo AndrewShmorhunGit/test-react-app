@@ -1,12 +1,19 @@
 import styled from "@emotion/styled";
-import { flexCenter } from "../../styles/styles";
+import { createGrid, flexCenter } from "../../styles/styles";
 import { keyframes } from "@emotion/react";
+import { headerHight } from "components/header/Header";
 
 export const Container = styled.div({
   marginLeft: "auto",
   marginRight: "auto",
 });
 
+export const PageContainer = styled.main({ ...createGrid("2fr 10fr", 1) });
+export const PageSection = styled.div({
+  overflow: "scrollX",
+  maxHeight: `calc(100vh - ${headerHight}rem)`,
+  padding: "2rem",
+});
 export const RelativeContainer = styled.div({
   position: "relative",
 });

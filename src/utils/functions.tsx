@@ -20,20 +20,3 @@ export function getDate() {
     dayOfMonth: dayOfMonth.slice(0, -1),
   };
 }
-
-export function Clock() {
-  // const [hours, minutes, seconds] = new Date().toLocaleTimeString().split(":");
-  // return [hours, minutes].join(":");
-
-  let time = new Date().toLocaleTimeString();
-  const [isTime, setTime] = React.useState(time);
-
-  const updateTime = () => {
-    let time = new Date().toLocaleTimeString();
-    setTime(time);
-  };
-
-  setInterval(updateTime, 1000);
-
-  return { time: isTime };
-}
